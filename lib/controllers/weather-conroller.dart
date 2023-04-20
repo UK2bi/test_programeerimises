@@ -7,7 +7,7 @@ class WeatherController {
   Future<String> fetchWeather() async {
     http.Response response = await http.get(Uri.parse(endpoint));
     Map<String, dynamic> weather = jsonDecode(response.body);
-    String weatherString = weather["current_weather"]["temperature"].toString() +"° C, wind speed: " + weather["current_weather"]["windspeed"].toString() + " m/s "+weather["current_weather"]["winddirection"].toString()+"° wind direction " + weather["current_weather"]["time"].toString();
+    String weatherString = weather["current_weather"]["temperature"].toString() +"° C, wind speed: " + weather["current_weather"]["windspeed"].toString() + " m/s "+weather["current_weather"]["winddirection"].toString()+"° wind direction,      Time: " + weather["current_weather"]["time"].toString();
     return weatherString;
   }
 }
